@@ -95,8 +95,6 @@ app.post("/api/authorinsert", verifyToken,function(req,res){
 })
 
 app.post("/api/bookinsert",verifyToken, function(req,res){
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Methods: GET, POST,PATCH,PUT,DELETE,OPTIONS");
     var book={
         bookTitle:req.body.book.bookTitle,
         bookAuthor:req.body.book.bookAuthor,
