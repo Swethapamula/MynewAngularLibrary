@@ -13,9 +13,6 @@ app.use(express.static('./dist/FrontEnd'));
 
 app.use(cors());
 
-app.get('/*',function(req,res){
-    res.sendFile(path.join(__dirname+'/dist/FrontEnd/index.html'));
-});
 
 function verifyToken(req, res, next) {
     if(!req.headers.authorization) {
@@ -207,6 +204,9 @@ app.put("/api/editauthor", verifyToken,function(req,res)
 
 });
 
+app.get('/*',function(req,res){
+    res.sendFile(path.join(__dirname +'/dist/FrontEnd/index.html'));
+});
 
 
 app.listen(port,()=>{console.log("Server ready at port" +port)});
